@@ -1,9 +1,12 @@
+-- Drop database if it exists
+DROP DATABASE IF EXISTS bamazon;
+
 -- Creating database
 CREATE DATABASE bamazon;
 
 USE bamazon;
 
---creating table
+-- creating table
 CREATE TABLE products(
     item_id INT NOT NULL AUTO_INCREMENT,
     product_name VARCHAR(100) NOT NULL,
@@ -14,7 +17,6 @@ CREATE TABLE products(
     PRIMARY KEY (item_id)
 );
 
-SELECT * from products;
 
 INSERT INTO products (product_name, product_sales, department_name, price, stock_quantity)
 VALUES 
@@ -28,4 +30,5 @@ VALUES
     ("Desk Lamp", 0, "Lighting", 20.00, 20),
     ("20 5B Pencil Set", 0, "Stationary", 4.00, 10),
     ("Hand Sanitizer 20 oz", 0, "Bath", 79.99, 0);
-);
+    
+SELECT * FROM bamazon.products;
